@@ -1,0 +1,41 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+// this is for children pages
+.router{
+  width: 100%;
+}
+///////////
+
+.sidenav {
+  height: 100%;
+  width: 80px;
+  background-color: rgb(79, 82, 85);
+  overflow-x: hidden;
+}
+
+.sidenav a {
+  padding: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover {
+  background-color: #157575;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+

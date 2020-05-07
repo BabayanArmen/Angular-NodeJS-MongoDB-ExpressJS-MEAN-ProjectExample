@@ -1,0 +1,94 @@
+////// main flex divs ////
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.header{
+  width: 100%;
+  // height: 100px;
+}
+
+.content{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar{
+  width: 80px;
+  height: 100%;
+}
+
+.router{
+  width: 100%;
+  height: 100%;
+}
+//////////////////////////////////////
+
+////// header ////////////////////////
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #507955;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 13px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+li a:hover {
+  background-color: #3c5735;
+  cursor: pointer;
+}
+
+#text{
+  color: white;
+  padding: 8px;
+  font-size: 20px;
+}
+#logout{
+  float: right;
+}
+///////////////////////////////////
+
+/// sidenav
+.sidenav {
+  height: 100%;
+  width: 80px;
+  background-color: #539b5d;
+  overflow-x: hidden;
+}
+
+.sidenav a {
+  padding: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover {
+  background-color: #497e5f;
+  cursor: pointer;
+
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

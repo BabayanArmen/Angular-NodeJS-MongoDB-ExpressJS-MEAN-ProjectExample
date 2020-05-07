@@ -1,0 +1,14 @@
+<div class="container">
+  <form [formGroup]="form" (submit)="onLogin()">
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" formControlName="email">
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" formControlName="password">
+
+    <button type="submit">Login</button>
+
+    <a routerLink="/register">Register</a>
+  </form>
+
+</div>

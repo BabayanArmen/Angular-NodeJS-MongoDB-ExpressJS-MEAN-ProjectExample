@@ -1,0 +1,25 @@
+<div class="wrapper">
+
+  <div class="header">
+    <ul>
+      <li id="text"><h3>Admin Page</h3></li>
+      <li id="logout"><a (click)="onLogout()">Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+
+    <div class="sidebar">
+      <div class="sidenav">
+        <a>Users</a>
+
+      </div>
+    </div>
+
+    <div class="router">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+</div>

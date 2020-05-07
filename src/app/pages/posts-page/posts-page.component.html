@@ -1,0 +1,66 @@
+<div class="wrapper">
+
+  <div class="addPost">
+
+    <form  [formGroup]="form" (submit)="onAddPost()">
+      <h3>Add New Post</h3>
+      <input type="text" placeholder="title" formControlName="title" [class.error]="this.form.get('title').touched && this.form.get('title').invalid">
+      <p *ngIf="this.form.get('title').touched && this.form.get('title').invalid">enter a title</p>
+      <br>
+      <textarea name="" id="" cols="20" rows="3" formControlName="content" [class.error]="this.form.get('content').touched && this.form.get('content').invalid"></textarea>
+      <p *ngIf="this.form.get('content').touched && this.form.get('content').invalid">enter the content</p>
+      <br>
+      <button class="button" [disabled]="this.form.invalid">Add Post</button>
+    </form>
+
+  </div>
+
+  <div class="output" >
+
+    <div class="posts" *ngIf="posts.length > 0 && !loading">
+
+      <div *ngFor="let post of posts">
+
+        <div *ngIf="post.creator === currentUserID">
+          <p>{{post.title}} : {{post.content}}</p>
+          <button class="button" [routerLink]="['/posts', post._id]" (click)="ngxSmartModalService.getModal('myModal').open()">edit post</button>
+
+          <!-- <button class="button"
+                  [routerLink]="['/posts', i]"
+                  [queryParams]="{title: post.title, content: post.content}"
+                  >update post
+          </button> -->
+
+          <button class="button" (click)="onDetele(post._id)">delete post</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <p *ngIf="posts.length <= 0 && loading">No post added yet</p>
+
+  </div>
+
+  <ngx-smart-modal #myModal identifier="myModal">
+    <router-outlet></router-outlet>
+    <!-- <button (click)="myModal.close()">Close</button> -->
+  </ngx-smart-modal>
+
+  <ng-template #customLoadingTemplate>
+    <div class="custom-class">
+        <!-- <h3>
+            Loading...
+        </h3> -->
+    </div>
+  </ng-template>
+
+  <ngx-loading  [show]="loading"
+                [config]="{ backdropBorderRadius: '3px' }"
+                [template]="customLoadingTemplate">
+  </ngx-loading>
+
+
+</div>
+
+

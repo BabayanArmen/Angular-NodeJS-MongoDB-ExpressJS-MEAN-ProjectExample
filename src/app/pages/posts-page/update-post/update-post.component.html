@@ -1,0 +1,19 @@
+<!-- <p>post number is {{id}}</p> -->
+<div class="wrapper">
+  <p>Post ID: {{postId}}</p>
+  <div class="editPost">
+
+    <form  [formGroup]="form" (submit)="onEditPost()">
+      <h3>Edit Post</h3>
+      <input type="text" placeholder="title" formControlName="title" [class.error]="this.form.get('title').touched && this.form.get('title').invalid">
+      <p *ngIf="this.form.get('title').touched && this.form.get('title').invalid">enter a title</p>
+      <br>
+      <textarea name="" id="" cols="20" rows="3" formControlName="content" [class.error]="this.form.get('content').touched && this.form.get('content').invalid"></textarea>
+      <p *ngIf="this.form.get('content').touched && this.form.get('content').invalid">enter the content</p>
+      <br>
+      <button class="button" [disabled]="this.form.invalid">Edit Post</button>
+    </form>
+
+  </div>
+
+</div>

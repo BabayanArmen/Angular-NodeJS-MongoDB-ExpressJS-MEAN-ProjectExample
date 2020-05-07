@@ -1,0 +1,20 @@
+<div class="container">
+
+  <form [formGroup]="form" (submit)="onSingUp()">
+
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" formControlName="username">
+
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" formControlName="email">
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" formControlName="password">
+
+    <button type="submit" [disabled]="form.invalid">Register</button>
+
+    <a routerLink="/login">Login</a>
+
+  </form>
+
+</div>
